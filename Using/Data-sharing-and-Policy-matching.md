@@ -1,0 +1,6 @@
+* when you create a new workflow and run it, initially no one will have access to its result set. Not even you the owner. 
+* to do anything with a workflow result set, you must attach a policy to it. Any users matching the policy will be able to use it as a data source in their workflows or reports.
+* to have access to your own workflows you will need to create a policy that matches your own user attributes. Then attach this policy to your workflow.
+* for a policy to match a user, the user must have attribute/value pairs that exactly match every attribute/value in the policy. For example if the policy only has one attribute (e.g. `organization = Bitnobi`) then this will match all users that have an attribute `organization = Bitnobi`. If a policy has two attributes (e.g. `organization = Bitnobi`, `department=IT`) then all users that belong to the Bitnobi organization and are in the IT department will match.
+* each policy must have at least 1 attribute.
+* policies created by one user are visible only to the owner. For example every user that wishes to share workflow results with all users of the Bitnobi organization must create their own policy with `organization = Bitnobi`.
